@@ -1,20 +1,22 @@
 package application;
 	
 import javafx.application.Application;
-import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
+			Parent parent = loader.load(); // carregou a view
+			Scene mainScene = new Scene(parent); // criei a sena
+			primaryStage.setScene(mainScene); // adicionei a sena no palco
+			primaryStage.setTitle("Simple javafx Application"); // coloquei um título na minha sena
+			primaryStage.show(); // agora mostro a sena
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
