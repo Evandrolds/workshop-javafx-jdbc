@@ -31,7 +31,7 @@ public class ManViewController implements Initializable {
 
 	@FXML
 	public void onMenuItemDepartmentAction() {
-		System.out.println("onMenuItemDepartmentAction");
+		loadView("/gui/DepartmentList.fxml");
 	}
 
 	@FXML
@@ -53,10 +53,10 @@ public class ManViewController implements Initializable {
 			Scene mainscene = Main.getMainScene();
 			VBox mainVbox = (VBox) ((ScrollPane) mainscene.getRoot()).getContent();// pegando do primeiro elemento da View
 
-			Node mainMenu = mainVbox.getChildren().get(0); // pegando do primeiro elemento do Children
+			Node mainMenu = mainVbox.getChildren().get(0); // pegando o primeiro elemento do Children
 			mainVbox.getChildren().clear();
 			mainVbox.getChildren().add(mainMenu);
-			mainVbox.getChildren().addAll(newVbox.getChildren());//adicionando uma coleção da da View
+			mainVbox.getChildren().addAll(newVbox.getChildren());//adicionando uma coleção da View
 		} catch (IOException e) {
 			Alerts.showAlert("IOException error", "Error load view", e.getMessage(), AlertType.ERROR);
 		}
