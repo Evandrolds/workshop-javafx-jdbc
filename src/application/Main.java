@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
+	private static Scene mainScene;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -15,13 +16,16 @@ public class Main extends Application {
 			ScrollPane scroballPene = loader.load(); // carregou a view
 			scroballPene.setFitToHeight(true); // configurando a tela
 			scroballPene.setFitToWidth(true);
-			Scene mainScene = new Scene(scroballPene); // criei a sena
+			mainScene = new Scene(scroballPene); // criei a sena
 			primaryStage.setScene(mainScene); // adicionei a sena no palco
 			primaryStage.setTitle("Simple javafx Application"); // coloquei um título na minha sena
 			primaryStage.show(); // agora mostro a sena
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public static Scene getMainScene() {
+		return mainScene;
 	}
 	
 	public static void main(String[] args) {
