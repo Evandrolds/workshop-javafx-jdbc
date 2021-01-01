@@ -1,14 +1,14 @@
 package application;
-	
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
-
 public class Main extends Application {
 	private static Scene mainScene;
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -20,14 +20,15 @@ public class Main extends Application {
 			primaryStage.setScene(mainScene); // adicionei a sena no palco
 			primaryStage.setTitle("Simple javafx Application"); // coloquei um título na minha sena
 			primaryStage.show(); // agora mostro a sena
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 	public static Scene getMainScene() {
 		return mainScene;
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
